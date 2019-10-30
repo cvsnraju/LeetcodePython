@@ -7,18 +7,21 @@
 # Input: 28
 # Output: True
 # Explanation: 28 = 1 + 2 + 4 + 7 + 14
-
-
-def checkPerfectNumber(num):
-    s = 1
-    i = 2
-    while i*i <= num :
-        if num % i == 0 :
-            s = s + i  + num/i
-        i += 1
-    if s == num :
-        return True
-    else:
-        return False
-res = checkPerfectNumber(28)
+from math import sqrt
+class Solution:
+    def checkPerfectNumber(self, num: int) -> bool :
+        s = 1
+        if num == 1:
+            return False
+        l = int(sqrt(num))
+        for k in range(2,l+1):
+            if num%k == 0:
+                s = s + num/k + k
+            elif num/k == k:
+                s = s - k
+        if s == num:
+            return True
+        else:
+            return False
+res = Solution().checkPerfectNumber(81)
 print(res)
