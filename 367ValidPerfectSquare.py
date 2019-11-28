@@ -15,10 +15,10 @@
 
 
 class Solution:
-    def isPerfectSquare(self, num: int) -> bool:
-      """ Square root is **0.5 for this calicualte remanider that should be == 0 for perfect square"""
-        res = num**0.5
-        if num % res == 0:
-            return True
-        return False
+  def isPerfectSquare(self, num: int) -> bool:
+    """ Square root is **0.5 for this calicualte remanider that should be == 0 for perfect square"""
+    res = num**0.5
+    if num % res == 0:
+      return True
+    return False
 
